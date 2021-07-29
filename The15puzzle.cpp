@@ -7,7 +7,7 @@ void DrawField(short array[4][4], int counter)
 	short* zero = &array[0][0];
 	char move;
 	bool flag = true;
-	cout << "\t   Âñåãî õîeäîâ: " << counter << endl << endl;
+	cout << "\t   Всего ходов: " << counter << endl << endl;
 
 	for (short i = 0; i < 4; i++)
 	{
@@ -25,7 +25,7 @@ void DrawField(short array[4][4], int counter)
 		}
 
 		cout  << char(124) << " ";
-		if (i == 0) cout << "Ââåäèòå äåéñòâèå:" << endl << endl;
+		if (i == 0) cout << "Введите действие:" << endl << endl;
 		else if (i == 1) cout << "        " << char(30) << endl << "                          8" << endl;
 		else if (i == 2) cout << "   " << char(17) << " 4     6 " << char(16) << endl << "                          2" << endl;
 		else if (i == 3) cout << "        " << char(31) << endl;
@@ -40,7 +40,7 @@ void DrawField(short array[4][4], int counter)
 		else if (move == '2' && zero - 4 >= &array[0][0] && zero - 4 <= &array[3][3])swap(*zero, *(zero - 4));
 		else
 		{
-			cout << "Îøèáêà ââîäà";
+			cout << "Ошибка ввода";
 			Sleep(1500);
 			move = char(2);
 		}
@@ -61,7 +61,7 @@ int main()
 	GetConsoleCursorInfo(handle, &structCursorInfo);
 	structCursorInfo.bVisible = FALSE;
 	SetConsoleCursorInfo(handle, &structCursorInfo);
-	cout << "\n\n\n\n       Ï  ß  Ò  Í  À  Ø  Ê  È\n\n\n\n";
+	cout << "\n\n\n\n       П  Я  Т  Н  А  Ш  К  И\n\n\n\n";
 	std::system("pause");
 	std::system("cls");
 	int counter = 0;
@@ -109,7 +109,7 @@ int main()
 
 
 	DrawField(field, counter);
-	cout << "\aÏîçäðàâëÿþ!" << endl << "Âàì óäàëîñü ðåøèòü ýòó ãîëîâîëîìêó!";
+	cout << "\aПоздравляю!" << endl << "Вам удалось решить эту головоломку!";
 	Sleep(10000);
 	std::system("cls");
 }
